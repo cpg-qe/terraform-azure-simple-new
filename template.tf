@@ -1,7 +1,7 @@
 resource "azurerm_virtual_network" "main" {
   name                = "${var.prefix}-network"
   address_space       = ["${var.address_space}"]
-  location            = "${azurerm_resource_group.main.location}"
+  location            = "East US"
   resource_group_name = "${var.resourceGroup}"
 }
 
@@ -14,7 +14,7 @@ resource "azurerm_subnet" "internal" {
 
 resource "azurerm_network_interface" "main" {
   name                = "${var.prefix}-nic"
-  location            = "${azurerm_resource_group.main.location}"
+  location            = "East US"
   resource_group_name = "${var.resourceGroup}"
 
   ip_configuration {
@@ -25,7 +25,7 @@ resource "azurerm_network_interface" "main" {
 }
 resource "azurerm_virtual_machine" "main" {
   name                  = "${var.prefix}-azure-vm"
-  location              = "${azurerm_resource_group.main.location}"
+  location              = "East US"
   resource_group_name   = "${var.resourceGroup}"
   network_interface_ids = ["${azurerm_network_interface.main.id}"]
   vm_size               = "${var.vmSize[1]["type2"]}"
@@ -73,7 +73,7 @@ resource "azurerm_public_ip" "test" {
 }
 resource "azurerm_managed_disk" "example" {
   name                 = "${var.prefix}-azure-vm-disk1"
-  location             = "${azurerm_resource_group.main.location}"
+  location             = "East US"
   resource_group_name  = "${var.resourceGroup}"
   storage_account_type = "Standard_LRS"
   create_option        = "Empty"
