@@ -11,6 +11,7 @@ variable "region" {
 variable "subscriptionId" {}
 variable "clientId" {}
 variable "clientSecret" {}
+//variable "clientSecret1" {}
 variable "resourceGroup" {
   default     = "cpg-dnd"
 }
