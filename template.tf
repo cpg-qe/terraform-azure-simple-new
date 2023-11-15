@@ -58,7 +58,7 @@ resource "azurerm_virtual_machine" "main" {
     disable_password_authentication = false
   }
   tags = {
-    environment = var.environment[2]["env"]
+    environment = var.environment1[2]["env"]
   }
 }
 resource "azurerm_public_ip" "test" {
