@@ -40,7 +40,7 @@ variable "listType" {
  */
 }
 
-variable "environment" {
+variable "environment1" {
  type = tuple([bool, bool, object({
    name = string
    env  = string,
