@@ -3,6 +3,10 @@ resource "azurerm_virtual_network" "main" {
   address_space       = ["${var.address_space}"]
   location            = "East US"
   resource_group_name = "${var.resourceGroup}"
+
+   tags = {
+      purpose = "change-detection-test"
+    }
 }
 
 resource "azurerm_subnet" "internal" {
