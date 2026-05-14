@@ -7,6 +7,12 @@ variable "region" {
   description = "The Azure Region in which all resources in this example should be created"
 }
 
+ variable "change_detection_tag" {
+    type        = string
+    description = "Harmless tag value used to test change detection pipelines"
+    default     = "test-marker-v1"
+}
+
 
 variable "subscriptionId" {}
 variable "clientId" {}
