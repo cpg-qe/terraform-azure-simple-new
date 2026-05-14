@@ -5,7 +5,7 @@ resource "azurerm_virtual_network" "main" {
   resource_group_name = "${var.resourceGroup}"
 
    tags = {
-      purpose = "change-detection-test"
+      detection_marker = var.change_detection_tag
     }
 }
 
