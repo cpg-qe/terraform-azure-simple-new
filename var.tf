@@ -13,6 +13,12 @@ variable "region" {
     default     = "test-marker-v1"
 }
 
+ # variable "change_detection_tag_commented" {
+  #     type        = string
+  #     description = "Harmless tag value used to test change detection pipelines"
+  #     default     = "test-marker-v2"
+  # }
+
 
 variable "subscriptionId" {}
 variable "clientId" {}
