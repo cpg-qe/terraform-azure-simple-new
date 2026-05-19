@@ -15,9 +15,9 @@ resource "azurerm_subnet" "internal" {
   virtual_network_name = "${azurerm_virtual_network.main.name}"
   address_prefixes       = ["${var.subnet_prefix}"]
 
-  #  tags = {
-    #    detection_marker = var.change_detection_tag
-    #  }
+  tags = {
+     detection_marker = var.change_detection_tag
+  }
 }
 
 resource "azurerm_network_interface" "main" {
